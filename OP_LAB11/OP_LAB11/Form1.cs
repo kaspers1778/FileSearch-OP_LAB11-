@@ -41,5 +41,13 @@ namespace OP_LAB11
                 txb_Output.Text += files + "\r\n";
             }
         }
+
+        private void btn_Open_Click(object sender, EventArgs e)
+        {
+            string FilePath = txb_Open.Text;
+            string DirectoryOfFilePath = FilePath.Substring(0, FilePath.LastIndexOf("\\"));
+            txb_Open.Text = DirectoryOfFilePath;
+            System.Diagnostics.Process.Start(DirectoryOfFilePath);
+        }
     }
 }

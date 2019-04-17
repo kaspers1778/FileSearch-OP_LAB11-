@@ -35,6 +35,8 @@
             this.txb_FileToFInd = new System.Windows.Forms.TextBox();
             this.txb_Output = new System.Windows.Forms.TextBox();
             this.cb_Register = new System.Windows.Forms.CheckBox();
+            this.txb_Open = new System.Windows.Forms.TextBox();
+            this.btn_Open = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txb_StartDirectory
@@ -99,11 +101,30 @@
             this.cb_Register.Text = "Register";
             this.cb_Register.UseVisualStyleBackColor = true;
             // 
+            // txb_Open
+            // 
+            this.txb_Open.Location = new System.Drawing.Point(93, 272);
+            this.txb_Open.Name = "txb_Open";
+            this.txb_Open.Size = new System.Drawing.Size(279, 20);
+            this.txb_Open.TabIndex = 9;
+            // 
+            // btn_Open
+            // 
+            this.btn_Open.Location = new System.Drawing.Point(12, 272);
+            this.btn_Open.Name = "btn_Open";
+            this.btn_Open.Size = new System.Drawing.Size(75, 23);
+            this.btn_Open.TabIndex = 10;
+            this.btn_Open.Text = "Open";
+            this.btn_Open.UseVisualStyleBackColor = true;
+            this.btn_Open.Click += new System.EventHandler(this.btn_Open_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 271);
+            this.ClientSize = new System.Drawing.Size(389, 317);
+            this.Controls.Add(this.btn_Open);
+            this.Controls.Add(this.txb_Open);
             this.Controls.Add(this.cb_Register);
             this.Controls.Add(this.txb_Output);
             this.Controls.Add(this.txb_FileToFInd);
@@ -126,6 +147,8 @@
         private System.Windows.Forms.TextBox txb_Output;
         public System.Windows.Forms.TextBox txb_StartDirectory;
         private System.Windows.Forms.CheckBox cb_Register;
+        private System.Windows.Forms.TextBox txb_Open;
+        private System.Windows.Forms.Button btn_Open;
     }
 }
 
