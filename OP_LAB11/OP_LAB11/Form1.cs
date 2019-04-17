@@ -22,13 +22,24 @@ namespace OP_LAB11
 
         string FileToFind;
 
+        bool isRegisterOn;
+
         private void btn_Search_Click(object sender, EventArgs e)
         {
+            txb_Output.Clear();
 
             StartPath = txb_StartDirectory.Text;
             FileToFind = txb_FileToFInd.Text;
+            isRegisterOn = cb_Register.Checked;
 
+            List<string> FilesToOutput = new List<string>();
+            
+            Search.FindFile(StartPath,FileToFind,isRegisterOn,FilesToOutput);
 
+            foreach(var files in FilesToOutput)
+            {
+                txb_Output.Text += files + "\r\n";
+            }
         }
     }
 }

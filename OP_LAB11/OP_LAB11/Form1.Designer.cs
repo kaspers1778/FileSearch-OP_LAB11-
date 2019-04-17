@@ -33,8 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txb_FileToFInd = new System.Windows.Forms.TextBox();
-            this.rb_Register = new System.Windows.Forms.RadioButton();
             this.txb_Output = new System.Windows.Forms.TextBox();
+            this.cb_Register = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txb_StartDirectory
@@ -79,33 +79,33 @@
             this.txb_FileToFInd.Size = new System.Drawing.Size(116, 20);
             this.txb_FileToFInd.TabIndex = 4;
             // 
-            // rb_Register
-            // 
-            this.rb_Register.AutoSize = true;
-            this.rb_Register.Location = new System.Drawing.Point(16, 85);
-            this.rb_Register.Name = "rb_Register";
-            this.rb_Register.Size = new System.Drawing.Size(64, 17);
-            this.rb_Register.TabIndex = 6;
-            this.rb_Register.TabStop = true;
-            this.rb_Register.Text = "Register";
-            this.rb_Register.UseVisualStyleBackColor = true;
-            // 
             // txb_Output
             // 
             this.txb_Output.Location = new System.Drawing.Point(12, 148);
             this.txb_Output.Multiline = true;
             this.txb_Output.Name = "txb_Output";
             this.txb_Output.ReadOnly = true;
-            this.txb_Output.Size = new System.Drawing.Size(353, 20);
+            this.txb_Output.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txb_Output.Size = new System.Drawing.Size(353, 105);
             this.txb_Output.TabIndex = 7;
+            // 
+            // cb_Register
+            // 
+            this.cb_Register.AutoSize = true;
+            this.cb_Register.Location = new System.Drawing.Point(16, 87);
+            this.cb_Register.Name = "cb_Register";
+            this.cb_Register.Size = new System.Drawing.Size(65, 17);
+            this.cb_Register.TabIndex = 8;
+            this.cb_Register.Text = "Register";
+            this.cb_Register.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(379, 271);
+            this.Controls.Add(this.cb_Register);
             this.Controls.Add(this.txb_Output);
-            this.Controls.Add(this.rb_Register);
             this.Controls.Add(this.txb_FileToFInd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -119,14 +119,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txb_StartDirectory;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txb_FileToFInd;
-        private System.Windows.Forms.RadioButton rb_Register;
         private System.Windows.Forms.TextBox txb_Output;
+        public System.Windows.Forms.TextBox txb_StartDirectory;
+        private System.Windows.Forms.CheckBox cb_Register;
     }
 }
 
