@@ -49,5 +49,10 @@ namespace OP_LAB11
             txb_Open.Text = DirectoryOfFilePath;
             System.Diagnostics.Process.Start(DirectoryOfFilePath);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace OP_LAB11
 
             foreach (var directory in Directory.EnumerateDirectories(StartDirectory))
             {
-                FindFile(directory, FileToFind, Register, PathToFile);
+                FindFileWithoutReg(directory, FileToFind, Register, PathToFile);
             }
 
 
@@ -45,28 +45,20 @@ namespace OP_LAB11
             var Files = Directory.EnumerateFiles(StartDirectory);
             string nameOfFile = null;
 
-            Regex fileWithStar = new Regex(FileToFind.Substring(0, FileToFind.IndexOf("*")) + @"\w+" + FileToFind.Substring(FileToFind.IndexOf("*") + 1, FileToFind.Length - FileToFind.IndexOf("*") - 1));
-
-            Regex fileWithStarNoReg = new Regex(FileToFind.Substring(0, FileToFind.IndexOf("*")) + @"\w+" + FileToFind.Substring(FileToFind.IndexOf("*") + 1, FileToFind.Length - FileToFind.IndexOf("*") - 1), RegexOptions.IgnoreCase);
+            Regex fileWithStar = new Regex(FileToFind.Replace("*", @"w+"), Register ? RegexOptions.None : RegexOptions.IgnoreCase );
 
             foreach (var file in Files)
             {
                 nameOfFile = file.Substring(file.LastIndexOf("\\") + 1, file.Length - file.LastIndexOf("\\") - 1);
 
-                if (Register)
-                {
-                    if (fileWithStar.Matches(nameOfFile).Count > 0) PathToFile.Add(file);
-                }
-                else
-                {
-                    if (fileWithStarNoReg.Matches(nameOfFile).Count > 0) PathToFile.Add(file);
-                }
+                if (fileWithStar.Matches(nameOfFile).Count > 0)
+                    PathToFile.Add(file);
 
             }
 
             foreach (var directory in Directory.EnumerateDirectories(StartDirectory))
             {
-                FindFile(directory, FileToFind, Register, PathToFile);
+                FindFileWithStar(directory, FileToFind, Register, PathToFile);
             }
 
 
@@ -77,28 +69,20 @@ namespace OP_LAB11
             var Files = Directory.EnumerateFiles(StartDirectory);
             string nameOfFile = null;
 
-            Regex fileWithQuestion = new Regex(FileToFind.Substring(0, FileToFind.IndexOf("?")) + @"\w" + FileToFind.Substring(FileToFind.IndexOf("?")+1, FileToFind.Length - FileToFind.IndexOf("?")-1));
 
-            Regex fileWithQuestionNoReg = new Regex(FileToFind.Substring(0, FileToFind.IndexOf("?")) + @"\w" + FileToFind.Substring(FileToFind.IndexOf("?") + 1, FileToFind.Length - FileToFind.IndexOf("?") - 1),RegexOptions.IgnoreCase);
+            Regex fileWithQuestion = new Regex(FileToFind.Replace("?", @"\w"),Register ? RegexOptions.None : RegexOptions.IgnoreCase);
 
             foreach (var file in Files)
             {
                 nameOfFile = file.Substring(file.LastIndexOf("\\") + 1, file.Length - file.LastIndexOf("\\") - 1);
 
-                if (Register)
-                {
-                    if (fileWithQuestion.Matches(nameOfFile).Count > 0) PathToFile.Add(file);
-                }
-                else
-                {                   
-                    if (fileWithQuestionNoReg.Matches(nameOfFile).Count > 0) PathToFile.Add(file);
-                }
-
+                if(fileWithQuestion.Matches(nameOfFile).Count > 0)
+                    PathToFile.Add(file);
             }
 
             foreach (var directory in Directory.EnumerateDirectories(StartDirectory))
             {
-                FindFile(directory, FileToFind, Register, PathToFile);
+                FindFileWithQuestionMark(directory, FileToFind, Register, PathToFile);
             }
 
 
@@ -110,7 +94,6 @@ namespace OP_LAB11
         {
             var Files = Directory.EnumerateFiles(StartDirectory);
 
-            string nameOfFileToFind;
 
             if (FileToFind.Contains("*"))
             {
