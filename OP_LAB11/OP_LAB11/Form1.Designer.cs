@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txb_StartDirectory = new System.Windows.Forms.TextBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txb_FileToFInd = new System.Windows.Forms.TextBox();
-            this.txb_Output = new System.Windows.Forms.TextBox();
             this.cb_Register = new System.Windows.Forms.CheckBox();
-            this.txb_Open = new System.Windows.Forms.TextBox();
-            this.btn_Open = new System.Windows.Forms.Button();
+            this.dgv_output = new System.Windows.Forms.DataGridView();
+            this.Files = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_output)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txb_StartDirectory
@@ -81,16 +84,6 @@
             this.txb_FileToFInd.Size = new System.Drawing.Size(116, 20);
             this.txb_FileToFInd.TabIndex = 4;
             // 
-            // txb_Output
-            // 
-            this.txb_Output.Location = new System.Drawing.Point(12, 148);
-            this.txb_Output.Multiline = true;
-            this.txb_Output.Name = "txb_Output";
-            this.txb_Output.ReadOnly = true;
-            this.txb_Output.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txb_Output.Size = new System.Drawing.Size(353, 105);
-            this.txb_Output.TabIndex = 7;
-            // 
             // cb_Register
             // 
             this.cb_Register.AutoSize = true;
@@ -101,32 +94,39 @@
             this.cb_Register.Text = "Register";
             this.cb_Register.UseVisualStyleBackColor = true;
             // 
-            // txb_Open
+            // dgv_output
             // 
-            this.txb_Open.Location = new System.Drawing.Point(93, 272);
-            this.txb_Open.Name = "txb_Open";
-            this.txb_Open.Size = new System.Drawing.Size(279, 20);
-            this.txb_Open.TabIndex = 9;
+            this.dgv_output.AllowUserToAddRows = false;
+            this.dgv_output.AllowUserToDeleteRows = false;
+            this.dgv_output.AllowUserToResizeColumns = false;
+            this.dgv_output.AllowUserToResizeRows = false;
+            this.dgv_output.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_output.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Files});
+            this.dgv_output.Location = new System.Drawing.Point(16, 148);
+            this.dgv_output.Name = "dgv_output";
+            this.dgv_output.RowHeadersVisible = false;
+            this.dgv_output.Size = new System.Drawing.Size(350, 150);
+            this.dgv_output.TabIndex = 11;
+            this.dgv_output.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_output_CellContentDoubleClick);
             // 
-            // btn_Open
+            // Files
             // 
-            this.btn_Open.Location = new System.Drawing.Point(12, 272);
-            this.btn_Open.Name = "btn_Open";
-            this.btn_Open.Size = new System.Drawing.Size(75, 23);
-            this.btn_Open.TabIndex = 10;
-            this.btn_Open.Text = "Open";
-            this.btn_Open.UseVisualStyleBackColor = true;
-            this.btn_Open.Click += new System.EventHandler(this.btn_Open_Click);
+            this.Files.HeaderText = "Files";
+            this.Files.Name = "Files";
+            this.Files.Width = 1000;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 317);
-            this.Controls.Add(this.btn_Open);
-            this.Controls.Add(this.txb_Open);
+            this.ClientSize = new System.Drawing.Size(386, 304);
+            this.Controls.Add(this.dgv_output);
             this.Controls.Add(this.cb_Register);
-            this.Controls.Add(this.txb_Output);
             this.Controls.Add(this.txb_FileToFInd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -134,7 +134,8 @@
             this.Controls.Add(this.txb_StartDirectory);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_output)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,11 +146,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txb_FileToFInd;
-        private System.Windows.Forms.TextBox txb_Output;
         public System.Windows.Forms.TextBox txb_StartDirectory;
         private System.Windows.Forms.CheckBox cb_Register;
-        private System.Windows.Forms.TextBox txb_Open;
-        private System.Windows.Forms.Button btn_Open;
+        private System.Windows.Forms.DataGridView dgv_output;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Files;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

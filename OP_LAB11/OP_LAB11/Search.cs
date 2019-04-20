@@ -16,14 +16,13 @@ namespace OP_LAB11
             var Files = Directory.EnumerateFiles(StartDirectory);
             string nameOfFile = null;
 
-            string nameOfFileToFind;
-
             foreach (var file in Files)
             {
                 nameOfFile = file.Substring(file.LastIndexOf("\\") + 1, file.Length - file.LastIndexOf("\\") - 1);
                 if (Register)
                 {
-                    if (nameOfFile.Contains(FileToFind)) PathToFile.Add(file);
+                    if (nameOfFile.Contains(FileToFind))
+                        PathToFile.Add(file);
                 }
                 else
                 {
@@ -37,7 +36,6 @@ namespace OP_LAB11
                 FindFileWithoutReg(directory, FileToFind, Register, PathToFile);
             }
 
-
         }
 
         static public void FindFileWithStar(string StartDirectory, string FileToFind, bool Register, List<string> PathToFile)
@@ -45,7 +43,7 @@ namespace OP_LAB11
             var Files = Directory.EnumerateFiles(StartDirectory);
             string nameOfFile = null;
 
-            Regex fileWithStar = new Regex(FileToFind.Replace("*", @"w+"), Register ? RegexOptions.None : RegexOptions.IgnoreCase );
+            Regex fileWithStar = new Regex(FileToFind.Replace("*", @"\w+"), Register ? RegexOptions.None : RegexOptions.IgnoreCase );
 
             foreach (var file in Files)
             {

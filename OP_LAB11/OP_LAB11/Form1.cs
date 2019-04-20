@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace OP_LAB11
 {
@@ -26,8 +27,7 @@ namespace OP_LAB11
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            txb_Output.Clear();
-
+            dgv_output.Rows.Clear();
             StartPath = txb_StartDirectory.Text;
             FileToFind = txb_FileToFInd.Text;
             isRegisterOn = cb_Register.Checked;
@@ -36,23 +36,25 @@ namespace OP_LAB11
             
             Search.FindFile(StartPath,FileToFind,isRegisterOn,FilesToOutput);
 
-            foreach(var files in FilesToOutput)
+            foreach(var file in FilesToOutput)
             {
-                txb_Output.Text += files + "\r\n";
+                dgv_output.Rows.Add(file);
             }
         }
 
-        private void btn_Open_Click(object sender, EventArgs e)
+        static void openInExplorer(string path)
         {
-            string FilePath = txb_Open.Text;
-            string DirectoryOfFilePath = FilePath.Substring(0, FilePath.LastIndexOf("\\"));
-            txb_Open.Text = DirectoryOfFilePath;
-            System.Diagnostics.Process.Start(DirectoryOfFilePath);
+            string cmd = "explorer.exe";
+            string arg = "/select, " + path;
+            Process.Start(cmd, arg);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void dgv_output_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            string FilePath = dgv_output.CurrentCell.Value.ToString();
+            openInExplorer(FilePath);
+            //string DirectoryOfFilePath = FilePath.Substring(0, FilePath.LastIndexOf("\\"));
+            //System.Diagnostics.Process.Start(DirectoryOfFilePath);
         }
     }
 }
