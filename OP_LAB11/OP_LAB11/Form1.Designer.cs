@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txb_StartDirectory = new System.Windows.Forms.TextBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,7 +52,7 @@
             // 
             // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(16, 119);
+            this.btn_Search.Location = new System.Drawing.Point(15, 119);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(75, 23);
             this.btn_Search.TabIndex = 1;
@@ -62,7 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 21);
+            this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 2;
@@ -79,15 +80,15 @@
             // 
             // txb_FileToFInd
             // 
-            this.txb_FileToFInd.Location = new System.Drawing.Point(106, 52);
+            this.txb_FileToFInd.Location = new System.Drawing.Point(97, 52);
             this.txb_FileToFInd.Name = "txb_FileToFInd";
-            this.txb_FileToFInd.Size = new System.Drawing.Size(116, 20);
+            this.txb_FileToFInd.Size = new System.Drawing.Size(125, 20);
             this.txb_FileToFInd.TabIndex = 4;
             // 
             // cb_Register
             // 
             this.cb_Register.AutoSize = true;
-            this.cb_Register.Location = new System.Drawing.Point(16, 87);
+            this.cb_Register.Location = new System.Drawing.Point(15, 86);
             this.cb_Register.Name = "cb_Register";
             this.cb_Register.Size = new System.Drawing.Size(65, 17);
             this.cb_Register.TabIndex = 8;
@@ -132,8 +133,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.txb_StartDirectory);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Search";
+            this.Text = "FileFind";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_output)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

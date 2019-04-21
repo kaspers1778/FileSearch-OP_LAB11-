@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("OP_LAB11")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("FileFind")]
+[assembly: AssemblyDescription("Norm TAk file ishet")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Ya")]
 [assembly: AssemblyProduct("OP_LAB11")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright pet.balachin1778@gmail.com ©  2019")]
+[assembly: AssemblyTrademark("kaspers1778")]
 [assembly: AssemblyCulture("")]
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
