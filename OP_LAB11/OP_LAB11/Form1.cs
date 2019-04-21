@@ -14,6 +14,7 @@ namespace OP_LAB11
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -33,8 +34,14 @@ namespace OP_LAB11
             isRegisterOn = cb_Register.Checked;
 
             List<string> FilesToOutput = new List<string>();
-            
-            Search.FindFile(StartPath,FileToFind,isRegisterOn,FilesToOutput);
+            try
+            {
+                Search.FindFile(StartPath, FileToFind, isRegisterOn, FilesToOutput);
+            }
+            catch
+            {
+                MessageBox.Show("Incorect data!");
+            }
 
             foreach(var file in FilesToOutput)
             {
@@ -53,8 +60,7 @@ namespace OP_LAB11
         {
             string FilePath = dgv_output.CurrentCell.Value.ToString();
             openInExplorer(FilePath);
-            //string DirectoryOfFilePath = FilePath.Substring(0, FilePath.LastIndexOf("\\"));
-            //System.Diagnostics.Process.Start(DirectoryOfFilePath);
         }
+
     }
 }

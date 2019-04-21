@@ -133,7 +133,7 @@
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.txb_StartDirectory);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Search";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_output)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
